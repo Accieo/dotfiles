@@ -1,0 +1,22 @@
+-- Main
+vim.opt.compatible = false
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.swapfile = false
+vim.opt.wrap = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.termguicolors = true
+vim.opt.smartcase = true
+vim.opt.hlsearch = false
+vim.opt.signcolumn = 'yes'
+vim.opt.incsearch = true
+vim.opt.hidden = true
+vim.opt.cmdheight = 2
+vim.opt.updatetime = 300
+vim.opt.pumheight = 10
+vim.opt.guifont = 'JetBrainsMono'
+vim.opt.shortmess:append 'c'
