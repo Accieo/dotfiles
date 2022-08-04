@@ -41,10 +41,7 @@ local accieoMaps = {
 		'n',
 		'<C-p>',
 		':w<CR>:!python3 %<CR>',
-		{ silent = false,
-		  noremap = true,
-		  desc = 'Execute current python script.'
-		}	
+		make_opt 'Execute current python script.'
 	)
 }
 
