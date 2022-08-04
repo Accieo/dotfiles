@@ -35,6 +35,16 @@ local accieoMaps = {
 		'gr',
 		require('telescope.builtin').live_grep,
 		make_opt 'Grep over files in current workspace.'
+	),
+
+	python = map(
+		'n',
+		'<C-p>',
+		':w<CR>:!python3 %<CR>',
+		{ silent = false,
+		  noremap = true,
+		  desc = 'Execute current python script.'
+		}	
 	)
 }
 

@@ -20,3 +20,6 @@ vim.opt.updatetime = 300
 vim.opt.pumheight = 10
 vim.opt.guifont = 'JetBrainsMono'
 vim.opt.shortmess:append 'c'
+
+-- Python
+vim.g.python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3'

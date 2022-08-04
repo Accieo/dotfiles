@@ -17,7 +17,11 @@ packer.startup(function(use)
 		use 'rmehri01/onenord.nvim'
 
 		-- LSP
-		use 'neovim/nvim-lspconfig'
+		use {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+		}
 
 		-- Telescope
 		use {
