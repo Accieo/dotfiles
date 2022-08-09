@@ -18,9 +18,14 @@ packer.startup(function(use)
 
 		-- LSP
 		use {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+			'neovim/nvim-lspconfig',
+		}
+
+		-- LSP Saga
+		use {
+			'glepnir/lspsaga.nvim'
 		}
 
 		-- Telescope
