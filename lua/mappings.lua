@@ -1,5 +1,3 @@
-vim.g.mapleader = ' '
-
 local remap = function(mode, lhs, rhs, opts)
 	pcall(vim.keymap.del, mode, lhs)
 	return vim.keymap.set(mode, lhs, rhs, opts)
@@ -18,7 +16,7 @@ end
 local accieoMaps = {
 	nvim_tree_toggle = remap(
 		'n',
-		'<leader>\\',
+		'<space>\\',
 		require('nvim-tree').toggle,
 		make_opt 'Toggle view of NvimTree.'
 	),
@@ -63,7 +61,15 @@ local accieoMaps = {
 		'<C-b>',
 		function() require('lspsaga.action').smart_scroll_with_saga(-1) end,
 		make_opt 'Scroll up within hover docs'
+	),
+
+	saga_code_action = remap(
+		'n',
+		'<leader>ca',
+		'<cmd>Lspsaga code_action<CR>',
+		make_opt 'Show code actions'
 	)
+
 }
 
 return accieoMaps
