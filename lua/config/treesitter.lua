@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'lua', 'rust', 'json', 'javascript', 'python', 'html', 'svelte' },
+    ensure_installed = { 'lua', 'rust', 'json', 'javascript', 'python', 'html', 'svelte', 'css' },
     sync_install = false,
     highlight = {
         enable = true,
@@ -14,5 +14,5 @@ require('nvim-treesitter.configs').setup {
     },
     indent = {
         enable = true,
-    },
+    }
 }
