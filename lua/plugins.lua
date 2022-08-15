@@ -46,6 +46,9 @@ packer.startup(function(use)
 			},
 		}
 
+		-- Snippets
+		use 'rafamadriz/friendly-snippets'
+
 		-- Text formatter
 		use {
 			'onsails/lspkind-nvim',
