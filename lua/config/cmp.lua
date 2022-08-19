@@ -61,6 +61,10 @@ cmp.setup {
     experimental = {
         ghost_text = true,
     },
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered()
+	}
 }
 
 return require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
