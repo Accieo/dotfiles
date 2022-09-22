@@ -3,6 +3,18 @@ local remap = function(mode, lhs, rhs, opts)
 	return vim.keymap.set(mode, lhs, rhs, opts)
 end
 
+local save_run_file = function()
+	local file = vim.api.nvim_buf_get_name(0)
+	local extension = file:match('^.+(%..+)$')
+	if extension == '.rs' then
+		return ':w<CR>:!cargo run %<CR>'
+	elseif extension == '.py' then
+		return ':w<CR>:!python3 %<CR>'
+	else
+		return ':w<CR>'
+	end
+end
+
 local map = vim.keymap.set
 
 local make_opt = function(desc)
@@ -35,11 +47,11 @@ local accieoMaps = {
 		make_opt 'Grep over files in current workspace.'
 	),
 
-	python = map(
+	run_file = map(
 		'n',
 		'<C-p>',
-		':w<CR>:!python3 %<CR>',
-		make_opt 'Execute current python script.'
+		save_run_file(),
+		make_opt 'Execute current file.'
 	),
 
 	saga_hover_doc = remap(
