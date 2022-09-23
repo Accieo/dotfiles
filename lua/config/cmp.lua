@@ -8,6 +8,7 @@ cmp.setup {
             require('luasnip').lsp_expand(args.body)
         end,
     },
+	preselect = cmp.PreselectMode.Item,
     mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -15,7 +16,7 @@ cmp.setup {
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
-                cmp.confirm { select = true }
+                cmp.confirm { select = false }
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             else
