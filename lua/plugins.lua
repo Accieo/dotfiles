@@ -7,7 +7,9 @@ packer.startup(function(use)
 		-- Tree sitter
 		use {
 			'nvim-treesitter/nvim-treesitter',
-			run = '<cmd>TSUpdate<cr>'
+			run = function()
+				require('nvim-treesitter.install').setup{}
+			end
 		}
 		
 		-- Close brackets automatically
