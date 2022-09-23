@@ -3,6 +3,14 @@ local packer = require 'packer'
 packer.startup(function(use)
 		-- Package manager
 		use 'wbthomason/packer.nvim'
+		
+		-- Which-Key
+		use {
+			'folke/which-key.nvim',
+			config = function()
+				require('which-key').setup{}
+			end
+		}
 
 		-- Tree sitter
 		use {
@@ -26,9 +34,7 @@ packer.startup(function(use)
 		}
 
 		-- LSP Saga
-		use {
-			'glepnir/lspsaga.nvim'
-		}
+		use 'glepnir/lspsaga.nvim'
 
 		-- Telescope
 		use {
