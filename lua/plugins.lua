@@ -4,14 +4,6 @@ packer.startup(function(use)
 		-- Package manager
 		use 'wbthomason/packer.nvim'
 		
-		-- Which-Key
-		use {
-			'folke/which-key.nvim',
-			config = function()
-				require('which-key').setup{}
-			end
-		}
-
 		-- Tree sitter
 		use {
 			'nvim-treesitter/nvim-treesitter',
