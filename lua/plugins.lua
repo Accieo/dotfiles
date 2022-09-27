@@ -3,7 +3,7 @@ local packer = require 'packer'
 packer.startup(function(use)
 		-- Package manager
 		use 'wbthomason/packer.nvim'
-		
+
 		-- Tree sitter
 		use {
 			'nvim-treesitter/nvim-treesitter',
@@ -11,7 +11,7 @@ packer.startup(function(use)
 				require('nvim-treesitter.install').setup{}
 			end
 		}
-		
+
 		-- Close brackets automatically
 		use 'windwp/nvim-autopairs'
 

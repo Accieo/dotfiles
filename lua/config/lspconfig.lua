@@ -1,7 +1,9 @@
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Python
 require('lspconfig').pyright.setup{}
-require('lspconfig').svelte.setup{}
-require('lspconfig').html.setup{}
+-- Rust
 require('lspconfig').rust_analyzer.setup{}
+-- Lua
 require('lspconfig').sumneko_lua.setup{
 	settings = {
 		Lua = {
@@ -19,4 +21,14 @@ require('lspconfig').sumneko_lua.setup{
 			},
 		},
 	}
+}
+-- Svelte
+require('lspconfig').svelte.setup{}
+-- TypeScript/JS
+require('lspconfig').tsserver.setup{}
+-- HTML
+require('lspconfig').html.setup{}
+-- CSS
+require('lspconfig').cssls.setup{
+	capabilities = capabilities
 }

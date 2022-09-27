@@ -18,7 +18,7 @@ vim.opt.hidden = true
 vim.opt.cmdheight = 2
 vim.opt.updatetime = 300
 vim.opt.pumheight = 10
-vim.opt.guifont = 'JetBrainsMono'
+vim.opt.guifont = 'JetBrains Mono'
 vim.opt.shortmess:append 'c'
 
 -- Python
