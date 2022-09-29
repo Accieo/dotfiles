@@ -68,6 +68,13 @@ local accieoMaps = {
 		'<leader>ca',
 		'<cmd>Lspsaga code_action<CR>',
 		make_opt 'Show code actions'
+	),
+
+	see_diff = remap(
+		'n',
+		'<leader>gd',
+		function() require('gitsigns.actions').preview_hunk() end,
+		make_opt('Preview diffs')
 	)
 
 }
