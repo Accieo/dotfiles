@@ -16,7 +16,7 @@ end
 local accieoMaps = {
 	nvim_tree_toggle = remap(
 		'n',
-		'<space>\\',
+		'<space><leader>',
 		require('nvim-tree').toggle,
 		make_opt 'Toggle view of NvimTree.'
 	),
@@ -33,6 +33,20 @@ local accieoMaps = {
 		'gr',
 		require('telescope.builtin').live_grep,
 		make_opt 'Grep over files in current workspace.'
+	),
+
+	telescope_buffers = map(
+		'n',
+		'<leader>tb',
+		'<cmd>Telescope buffers<CR>',
+		make_opt 'Display active buffers'
+	),
+
+	save_file = map(
+		'n',
+		'<leader>w',
+		'<cmd>w<CR>',
+		make_opt 'Save current file'
 	),
 
 	python = map(
