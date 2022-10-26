@@ -32,3 +32,5 @@ require('lspconfig').html.setup{}
 require('lspconfig').cssls.setup{
 	capabilities = capabilities
 }
+-- Docker
+require('lspconfig').dockerls.setup{}

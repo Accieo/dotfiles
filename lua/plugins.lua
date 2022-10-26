@@ -15,8 +15,8 @@ packer.startup(function(use)
 		-- Close brackets automatically
 		use 'windwp/nvim-autopairs'
 
-		-- Theme
-		use 'rmehri01/onenord.nvim'
+		-- Themes
+		use 'rebelot/kanagawa.nvim'
 
 		-- LSP
 		use {
