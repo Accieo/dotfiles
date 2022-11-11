@@ -1,1 +1,1 @@
-vim.api.nvim_exec('colorscheme kanagawa', false)
+vim.api.nvim_exec('colorscheme tokyonight', false)

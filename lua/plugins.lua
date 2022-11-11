@@ -16,7 +16,7 @@ packer.startup(function(use)
 		use 'windwp/nvim-autopairs'
 
 		-- Themes
-		use 'rebelot/kanagawa.nvim'
+		use 'folke/tokyonight.nvim'
 
 		-- LSP
 		use {
