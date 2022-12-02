@@ -80,4 +80,7 @@ packer.startup(function(use)
 		-- Dashboard
 		use 'goolord/alpha-nvim'
 
+		-- Discord presence	
+		use 'andweeb/presence.nvim'
+
 end)
