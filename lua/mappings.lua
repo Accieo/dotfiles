@@ -84,6 +84,34 @@ local accieoMaps = {
 		make_opt 'Show code actions'
 	),
 
+	saga_jump_next_error = remap(
+		'n',
+		'<F2>',
+		function() require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR }) end,
+		make_opt 'Jump to next error'
+	),
+
+	saga_jump_prev_error = remap(
+		'n',
+		'<leader><F2>',
+		function() require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR }) end,
+		make_opt 'Jump to prev error'
+	),
+
+	saga_jump_next_diagnostic = remap(
+		'n',
+		'<F3>',
+		'<cmd>Lspsaga diagnostic_jump_next<CR>',
+		make_opt 'Jump to next diagnostic'
+	),
+
+	saga_jump_prev_diagnostic = remap(
+		'n',
+		'<leader><F3>',
+		'<cmd>Lspsaga diagnostic_jump_prev<CR>',
+		make_opt 'Jump to prev diagnostic'
+	),
+
 	see_diff = remap(
 		'n',
 		'<leader>gd',
