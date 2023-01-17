@@ -1,7 +1,12 @@
 local saga = require 'lspsaga'
 
-saga.init_lsp_saga({
-	border_style = 'rounded',
+saga.setup({
+	ui = {
+		border = 'rounded',
+		colors = {
+			normal_bg = '',
+		}
+	},
 	symbol_in_winbar = {
 		enable = false
 	}

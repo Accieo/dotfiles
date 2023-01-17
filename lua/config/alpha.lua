@@ -20,7 +20,6 @@ dashboard.section.header.val = {
 }
 dashboard.section.footer.val = ' ~ Accieo'
 dashboard.section.buttons.val = {
-    dashboard.button('e', '  New file', '<cmd>ene <CR>'),
     dashboard.button('c', '  Edit Configuration', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/<CR>'),
     dashboard.button('m', '  Edit Keymaps', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/mappings.lua<CR>'),
     dashboard.button('p', '  Edit Plugins', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/plugins.lua<CR>'),

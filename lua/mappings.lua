@@ -63,20 +63,6 @@ local accieoMaps = {
 		make_opt 'Display doc in pop-up window'
 	),
 
-	saga_scrdown_hover_doc = remap(
-		'n',
-		'<C-f>',
-		function() require('lspsaga.action').smart_scroll_with_saga(1) end,
-		make_opt 'Scroll down within hover docs'
-	),
-
-	saga_scrup_hover_doc = remap(
-		'n',
-		'<C-b>',
-		function() require('lspsaga.action').smart_scroll_with_saga(-1) end,
-		make_opt 'Scroll up within hover docs'
-	),
-
 	saga_code_action = remap(
 		'n',
 		'<leader>ca',
@@ -110,6 +96,13 @@ local accieoMaps = {
 		'<leader><F3>',
 		'<cmd>Lspsaga diagnostic_jump_prev<CR>',
 		make_opt 'Jump to prev diagnostic'
+	),
+
+	saga_rename = remap(
+		'n',
+		'<F4>',
+		'<cmd>Lspsaga rename<CR>',
+		make_opt 'Rename/Refactor'
 	),
 
 	see_diff = remap(

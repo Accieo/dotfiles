@@ -83,4 +83,6 @@ packer.startup(function(use)
 		-- Discord presence	
 		use 'andweeb/presence.nvim'
 
+		-- Nvim-notify
+		use 'rcarriga/nvim-notify'
 end)
