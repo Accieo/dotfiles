@@ -9,4 +9,5 @@ require('presence'):setup({
 	plugin_manager_text = 'Managing plugins',
 	reading_text = 'Reading a file',
 	workspace_text = 'Working on a project',
+	main_image = 'file'
 })
