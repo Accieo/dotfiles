@@ -17,7 +17,7 @@ local accieoMaps = {
 	nvim_tree_toggle = remap(
 		'n',
 		'<space><leader>',
-		require('nvim-tree').toggle,
+		require('nvim-tree.api').tree.toggle,
 		make_opt 'Toggle view of NvimTree.'
 	),
 
