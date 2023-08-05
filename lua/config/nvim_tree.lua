@@ -2,7 +2,6 @@ require('nvim-tree').setup {
     auto_reload_on_write = true,
     disable_netrw = true,
     hijack_netrw = true,
-    open_on_setup = false,
     sort_by = 'name',
     view = {
         width = 30,
