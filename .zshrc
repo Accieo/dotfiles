@@ -1,5 +1,5 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n] 
+# Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -22,6 +22,10 @@ export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
 export IPYTHONDIR="$HOME/.config/ipython"
 # Set Gradle path
 export GRADLE_USER_HOME="$HOME/.cache/gradle"
+# Add postgresql to path
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+# Prevent bytecode from Python
+export PYTHONDONTWRITEBYTECODE=1
 
 # -- Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -37,9 +41,10 @@ source $ZSH/oh-my-zsh.sh
 
 # -- Aliases
 alias vim='nvim'
-alias python='python3'
+alias python='python3.10'
 alias venvact='source $HOME/Development/.venvs/main/bin/activate'
 alias ls='exa -lh --sort=filename --sort=type --icons'
 alias jl='venvact && jupyter-lab'
 alias icat='kitty +kitten icat'
 alias clippy='cargo clippy -- -W clippy::pedantic -W clippy::nursery'
+alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
