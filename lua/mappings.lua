@@ -52,7 +52,7 @@ local accieoMaps = {
 	python = map(
 		'n',
 		'<C-p>',
-		':w<CR>:!python3 %<CR>',
+		':w<CR>:!python3.10 %<CR>',
 		make_opt 'Execute current python script.'
 	),
 

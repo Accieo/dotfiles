@@ -22,9 +22,9 @@ dashboard.section.footer.val = ' ~ Accieo'
 dashboard.section.buttons.val = {
     dashboard.button('c', '  Edit Configuration', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/<CR>'),
     dashboard.button('m', '  Edit Keymaps', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/mappings.lua<CR>'),
-    dashboard.button('p', '  Edit Plugins', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/plugins.lua<CR>'),
+    dashboard.button('p', '󰤌  Edit Plugins', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/plugins.lua<CR>'),
     dashboard.button('u', '  Update Plugins', '<cmd>PackerSync<CR>'),
-    dashboard.button('q', '  Quit', '<cmd>wqa<CR>'),
+    dashboard.button('q', '󰿅  Quit', '<cmd>wqa<CR>'),
 }
 
 require('alpha').setup(dashboard.config)
