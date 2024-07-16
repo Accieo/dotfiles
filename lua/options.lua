@@ -25,4 +25,4 @@ vim.opt.mouse = ''
 vim.g.python3_host_prog = '$HOME/Development/.venvs/main/bin/python3'
 
 -- Theme
-vim.api.nvim_exec('colorscheme tokyonight-night', false)
+vim.cmd('colorscheme tokyonight-night', false)

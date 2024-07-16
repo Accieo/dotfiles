@@ -28,11 +28,3 @@ dashboard.section.buttons.val = {
 }
 
 require('alpha').setup(dashboard.config)
-
-local M = {}
-
-M.list_bookmarks = function()
-    vim.notify(vim.inspect(vim.api.nvim_buf_get_extmarks()))
-end
-
-return M
