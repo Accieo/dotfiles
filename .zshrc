@@ -9,7 +9,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Add Python to Path
-export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"
 # Editor export
 export EDITOR='nvim'
 # Scripts path
@@ -26,6 +26,8 @@ export GRADLE_USER_HOME="$HOME/.cache/gradle"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 # Prevent bytecode from Python
 export PYTHONDONTWRITEBYTECODE=1
+# Golang Path
+export GOPATH="$HOME/.go"
 
 # -- Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -41,10 +43,16 @@ source $ZSH/oh-my-zsh.sh
 
 # -- Aliases
 alias vim='nvim'
-alias python='python3.10'
+alias fvim='nvim $(fzf)'
+alias cfg='vim $HOME/.zshrc'
+alias python='python3.12'
+alias pip='pip3'
 alias venvact='source $HOME/Development/.venvs/main/bin/activate'
-alias ls='exa -lh --sort=filename --sort=type --icons'
+alias ls='eza -lh --sort=filename --sort=type --icons'
 alias jl='venvact && jupyter-lab'
 alias icat='kitty +kitten icat'
-alias clippy='cargo clippy -- -W clippy::pedantic -W clippy::nursery'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
+
+# -- Zsh
+eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"

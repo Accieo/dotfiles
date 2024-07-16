@@ -22,7 +22,7 @@ vim.opt.shortmess:append 'c'
 vim.opt.mouse = ''
 
 -- Python
-vim.g.python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3'
+vim.g.python3_host_prog = '$HOME/Development/.venvs/main/bin/python3'
 
 -- Theme
 vim.api.nvim_exec('colorscheme tokyonight-night', false)

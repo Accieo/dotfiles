@@ -35,3 +35,7 @@ require('lspconfig').cssls.setup{
 }
 -- Docker
 require('lspconfig').dockerls.setup{}
+-- Go
+require('lspconfig').gopls.setup{}
+-- C
+require('lspconfig').clangd.setup{}
