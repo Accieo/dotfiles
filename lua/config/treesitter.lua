@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'lua', 'rust', 'json', 'javascript', 'python', 'html', 'svelte', 'css' },
+    ensure_installed = { 'lua', 'rust', 'json', 'javascript', 'python', 'html', 'svelte', 'css', 'astro' },
 	ignore_install = {},
 	auto_install = false,
 	modules = {},

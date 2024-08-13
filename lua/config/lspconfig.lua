@@ -39,3 +39,5 @@ require('lspconfig').dockerls.setup{}
 require('lspconfig').gopls.setup{}
 -- C
 require('lspconfig').clangd.setup{}
+-- Astro
+require('lspconfig').astro.setup{}
