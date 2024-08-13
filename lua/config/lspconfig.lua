@@ -41,3 +41,5 @@ require('lspconfig').gopls.setup{}
 require('lspconfig').clangd.setup{}
 -- Astro
 require('lspconfig').astro.setup{}
+-- Tailwind
+require('lspconfig').tailwindcss.setup{}

@@ -12,6 +12,12 @@ packer.startup(function(use)
 			end
 		}
 
+		-- Better integrated terminal support
+		use {
+			'akinsho/toggleterm.nvim',
+			tag = "v2.12.0"
+		}
+
 		-- Close brackets automatically
 		use 'windwp/nvim-autopairs'
 
