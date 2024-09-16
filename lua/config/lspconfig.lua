@@ -23,10 +23,8 @@ require('lspconfig').lua_ls.setup{
 		},
 	}
 }
--- Svelte
-require('lspconfig').svelte.setup{}
 -- TypeScript/JS
-require('lspconfig').tsserver.setup{}
+require('lspconfig').ts_ls.setup{}
 -- HTML
 require('lspconfig').html.setup{}
 -- CSS
