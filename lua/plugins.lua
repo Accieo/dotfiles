@@ -1,94 +1,144 @@
-local packer = require 'packer'
+return {
+	-- Package manager
+	"folke/lazy.nvim",
 
-packer.startup(function(use)
-		-- Package manager
-		use 'wbthomason/packer.nvim'
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			require("config.treesitter")
+		end,
+	},
 
-		-- Tree sitter
-		use {
-			'nvim-treesitter/nvim-treesitter',
-			run = function()
-				require('nvim-treesitter.install').setup{}
-			end
-		}
+	-- Better integrated terminal support
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("config.toggleterm")
+		end,
+	},
 
-		-- Better integrated terminal support
-		use {
-			'akinsho/toggleterm.nvim',
-			tag = "v2.12.0"
-		}
+	-- Close brackets automatically
+	{
+		"windwp/nvim-autopairs",
+		config = function()
+			require("config.autopairs")
+		end,
+	},
 
-		-- Close brackets automatically
-		use 'windwp/nvim-autopairs'
+	-- Themes
+	{
+		"navarasu/onedark.nvim",
+		config = function()
+			require("onedark").setup {
+				-- style = 'darker'
+			}
+		end,
+	},
 
-		-- Themes
-		use 'navarasu/onedark.nvim'
+	-- LSP
+	{
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("config.mason")
+			require("config.lspconfig")
+		end,
+	},
 
-		-- LSP
-		use {
-			'williamboman/mason.nvim',
-			'williamboman/mason-lspconfig.nvim',
-			'neovim/nvim-lspconfig',
-		}
+	-- LSP Saga
+	{
+		"glepnir/lspsaga.nvim",
+		config = function()
+			require("config.lspsaga")
+		end,
+	},
 
-		-- LSP Saga
-		use 'glepnir/lspsaga.nvim'
+	-- Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("config.telescope")
+		end,
+	},
 
-		-- Telescope
-		use {
-			'nvim-telescope/telescope.nvim',
-			requires = { 'nvim-lua/plenary.nvim' },
-		}
+	-- Autocomplete
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
+		config = function()
+			require("config.cmp")
+		end,
+	},
 
-		-- Autocomplete
-		use {
-			'hrsh7th/nvim-cmp',
-			requires = {
-				'hrsh7th/cmp-nvim-lsp',
-				'hrsh7th/cmp-buffer',
-				'hrsh7th/cmp-path',
-				'L3MON4D3/LuaSnip',
-				'saadparwaiz1/cmp_luasnip',
-			},
-		}
+	-- Snippets
+	"rafamadriz/friendly-snippets",
 
-		-- Snippets
-		use 'rafamadriz/friendly-snippets'
+	-- Text formatter
+	{
+		"onsails/lspkind-nvim",
+		dependencies = { "hrsh7th/nvim-cmp" },
+		config = function()
+			require("config.lspkind")
+		end,
+	},
 
-		-- Text formatter
-		use {
-			'onsails/lspkind-nvim',
-			requires = {
-				'hrsh7th/nvim-cmp',
-			},
-		}
+	-- Statusline
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("config.lualine")
+		end,
+	},
 
-		-- Statusline
-		use {
-				'nvim-lualine/lualine.nvim',
-				requires = { 'kyazdani42/nvim-web-devicons' }
-		}
+	-- File explorer
+	{
+		"kyazdani42/nvim-tree.lua",
+		dependencies = { "kyazdani42/nvim-web-devicons" },
+		config = function()
+			require("config.nvim_tree")
+		end,
+	},
 
-		-- File explorer
-		use {
-				'kyazdani42/nvim-tree.lua',
-				requires = {
-					{ 'kyazdani42/nvim-web-devicons' },
-				},
-		}
+	-- Git signs
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("config.gitsigns")
+		end,
+	},
 
-		-- Git signs
-		use 'lewis6991/gitsigns.nvim'
+	-- Surround
+	{
+		"kylechui/nvim-surround",
+		config = function()
+			require("config.nvim_surround")
+		end,
+	},
 
-		-- Surround
-		use 'kylechui/nvim-surround'
+	-- Dashboard
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			require("config.alpha")
+		end,
+	},
 
-		-- Dashboard
-		use 'goolord/alpha-nvim'
-
-		-- Discord presence	
-		use 'andweeb/presence.nvim'
-
-		-- Nvim-notify
-		use 'rcarriga/nvim-notify'
-end)
+	-- Discord presence
+	{
+		"andweeb/presence.nvim",
+		config = function()
+			require("config.presence")
+		end,
+	},
+}
