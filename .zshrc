@@ -28,6 +28,8 @@ export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 # Golang Path
 export GOPATH="$HOME/.go"
+# Add Rust to Path
+export PATH="/opt/homebrew/opt/rustup/bin/:$PATH"
 
 # -- Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
