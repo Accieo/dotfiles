@@ -41,3 +41,5 @@ require('lspconfig').clangd.setup{}
 require('lspconfig').astro.setup{}
 -- Tailwind
 require('lspconfig').tailwindcss.setup{}
+-- Swift
+require('lspconfig').sourcekit.setup{}
