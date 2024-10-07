@@ -1,6 +1,7 @@
 local dashboard = require 'alpha.themes.dashboard'
 
 dashboard.leader = vim.g.mapleader
+dashboard.section.header.opts.hl = "DevIconDconf"
 dashboard.section.header.val = {
 [[⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 [[⠀⠀⠀⠀⣤⠊⣇⡀⠀⢀⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
