@@ -1,0 +1,81 @@
+{
+	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+	"version": 2,
+	"final_space": true,
+	"console_title_template": "{{ .Shell }}@{{ .UserName }}",
+	"blocks": [
+		{
+			"alignment": "left",
+			"segments": [
+				{
+					"foreground": "p:white",
+					"template": "<p:magenta>[</>{{ .UserName }}<p:magenta>]</>",
+					"type": "session"
+				},
+				{
+					"foreground": "p:white",
+					"properties": {
+						"style": "full"
+					},
+					"template": "<p:magenta>[</>{{ .Path }}<p:magenta>]</>",
+					"type": "path"
+				},
+				{
+					"foreground": "p:magenta",
+					"foreground_templates": [
+						"{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+						"{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:orange{{ end }}",
+						"{{ if gt .Ahead 0 }}p:green{{ end }}",
+						"{{ if gt .Behind 0 }}p:red{{ end }}"
+					],
+					"properties": {
+						"branch_icon": " ",
+						"fetch_stash_count": true,
+						"fetch_status": true,
+						"fetch_upstream_icon": true,
+						"fetch_worktree_count": true
+					},
+					"style": "diamond",
+					"template": " <p:white>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+					"type": "git"
+				},
+				{
+					"foreground": "p:white",
+					"style": "plain",
+					"template": "<p:magenta> [</>{{ if gt .Code 0 }}<p:red>{{ reason .Code }}</>{{ end }}<p:magenta>]</>",
+					"type": "status"
+				}
+			],
+			"type": "prompt"
+		},
+		{
+			"alignment": "right",
+			"segments": [
+				{
+					"type": "executiontime",
+					"foreground": "p:white",
+					"template": "<p:magenta>[</>{{ .FormattedMs }}<p:magenta>]</>",
+					"properties": {
+						"threshold": 500,
+						"style": "austin",
+						"always_enabled": true
+					}
+				},
+				{
+					"foreground": "p:white",
+					"template": "<p:magenta>[</>󱑍 {{ .CurrentDate | date .Format }}<p:magenta>]</>",
+					"type": "time"
+				}
+			],
+			"type": "rprompt"
+		}
+	],
+	"palette": {
+		"white": "#FFFFFF",
+		"magenta": "#B68AE2",
+		"red": "#D6042E",
+		"yellow": "#F2E259",
+		"orange": "#FFCC80",
+		"green": "#16C954"
+	}
+}
