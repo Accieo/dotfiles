@@ -52,6 +52,17 @@
 			"alignment": "right",
 			"segments": [
 				{
+					"type": "python",
+					"foreground": "p:blue",
+					"template": "{{ if .Venv }}<p:yellow> </>[{{ .Venv }}@{{ .Full }}]{{ end }}",
+					"properties": {
+						"fetch_virtual_env": true,
+						"fetch_version": true,
+						"folder_name_fallback": false,
+						"display_mode": "environment"
+					}
+				},
+				{
 					"type": "executiontime",
 					"foreground": "p:white",
 					"template": "<p:magenta>[</>{{ .FormattedMs }}<p:magenta>]</>",
@@ -76,6 +87,7 @@
 		"red": "#D6042E",
 		"yellow": "#F2E259",
 		"orange": "#FFCC80",
-		"green": "#16C954"
+		"green": "#16C954",
+		"blue": "#439EDB"
 	}
 }
