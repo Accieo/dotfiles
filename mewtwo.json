@@ -56,6 +56,7 @@
 					"foreground": "p:blue",
 					"template": "{{ if .Venv }}<p:yellow> </>[{{ .Venv }}@{{ .Full }}]{{ end }}",
 					"properties": {
+						"home_enabled": true,
 						"fetch_virtual_env": true,
 						"fetch_version": true,
 						"folder_name_fallback": false,
