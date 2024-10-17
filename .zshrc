@@ -19,15 +19,27 @@ export GRADLE_USER_HOME="$HOME/.cache/gradle"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 # Prevent bytecode from Python
 export PYTHONDONTWRITEBYTECODE=1
-# Golang Path
+# Golang path
 export GOPATH="$HOME/.go"
-# Add Rust to Path
+# Add Rust to path
 export PATH="/opt/homebrew/opt/rustup/bin/:$PATH"
+# Set eza config dir
+export EZA_CONFIG_DIR="$HOME/.config/eza"
 
 # -- Plugins
 plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+# -- Functions
+venvacth() {
+	venvdir=$(find . -maxdepth 3 -path "*/bin/activate" -type f 2>/dev/null)
+	if [[ -z "$venvdir" ]]; then
+		echo "venv not found in current folder"
+	else
+		source "$venvdir"
+	fi
+}
 
 # -- Aliases
 alias vim='nvim'
