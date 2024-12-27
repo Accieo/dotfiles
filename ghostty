@@ -1,0 +1,23 @@
+# Font settings
+font-size = 16
+font-thicken = true
+font-family = SF Mono
+font-style-bold = Medium
+font-style-italic = Light Italic
+font-style-bold-italic = Regular Italic
+# Window font settings
+window-title-font-family = SF Mono
+
+# Theme
+theme = Oxocarbon
+
+# Clipboard settings
+clipboard-read = allow
+clipboard-write = allow
+
+# Titlebar settings
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+
+# Misc.
+mouse-hide-while-typing = false
