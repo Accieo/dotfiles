@@ -50,7 +50,6 @@ alias pip='pip3'
 alias venvact='source $HOME/Development/.venvs/main/bin/activate'
 alias ls='eza -lh --sort=filename --sort=type --icons'
 alias jl='venvact && jupyter-lab'
-alias icat='kitty +kitten icat'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
 
 # -- Zsh
