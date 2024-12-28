@@ -21,3 +21,4 @@ macos-titlebar-style = tabs
 
 # Misc.
 mouse-hide-while-typing = false
+window-save-state = always
