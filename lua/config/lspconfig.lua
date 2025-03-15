@@ -38,7 +38,9 @@ require('lspconfig').gopls.setup{}
 -- C
 require('lspconfig').clangd.setup{}
 -- Astro
-require('lspconfig').astro.setup{}
+require('lspconfig').astro.setup{
+	capabilities = capabilities
+}
 -- Tailwind
 require('lspconfig').tailwindcss.setup{}
 -- Swift
