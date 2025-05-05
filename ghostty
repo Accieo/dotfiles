@@ -1,12 +1,12 @@
 # Font settings
-font-size = 16
+font-size = 18
 font-thicken = true
-font-family = SF Mono
+font-family = GohuFont
 font-style-bold = Medium
 font-style-italic = Light Italic
 font-style-bold-italic = Regular Italic
 # Window font settings
-window-title-font-family = SF Mono
+window-title-font-family = GohuFont
 
 # Theme
 theme = Oxocarbon
@@ -22,3 +22,4 @@ macos-titlebar-style = tabs
 # Misc.
 mouse-hide-while-typing = false
 window-save-state = always
+macos-icon = holographic

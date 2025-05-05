@@ -29,7 +29,7 @@ return {
 
 	-- Themes
 	{
-		"navarasu/onedark.nvim",
+		"accieo/onedark.nvim", -- Use own fork with custom colors
 		config = function()
 			require("onedark").load()
 		end,

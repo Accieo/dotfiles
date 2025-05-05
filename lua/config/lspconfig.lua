@@ -31,6 +31,8 @@ require('lspconfig').html.setup{}
 require('lspconfig').cssls.setup{
 	capabilities = capabilities
 }
+-- Vue
+require('lspconfig').volar.setup{}
 -- Docker
 require('lspconfig').dockerls.setup{}
 -- Go
