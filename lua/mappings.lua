@@ -17,21 +17,21 @@ local accieoMaps = {
 	nvim_tree_toggle = remap(
 		'n',
 		'<space><leader>',
-		require('nvim-tree.api').tree.toggle,
+		function() require('nvim-tree.api').tree.toggle() end,
 		make_opt 'Toggle view of NvimTree.'
 	),
 
 	telescope_invoke = remap(
 		'n',
 		'T',
-		require('telescope.builtin').find_files,
+		function() require('telescope.builtin').find_files() end,
 		make_opt 'Find a project file by name using Telescope.'
 	),
 
 	telescope_live_grep = map(
 		'n',
 		'gr',
-		require('telescope.builtin').live_grep,
+		function() require('telescope.builtin').live_grep() end,
 		make_opt 'Grep over files in current workspace.'
 	),
 
