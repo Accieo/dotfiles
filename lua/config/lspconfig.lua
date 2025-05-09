@@ -10,7 +10,7 @@ require('lspconfig').rust_analyzer.setup {
 -- Lua
 require('lspconfig').lua_ls.setup {
 	capabilities = capabilities,
-	on_attach = function(client, bufnr)
+	on_attach = function(client, _)
 		client.server_capabilities.documentFormattingProvider = true
 	end,
 	settings = {
