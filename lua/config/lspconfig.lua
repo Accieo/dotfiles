@@ -1,49 +1,84 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Python
-require('lspconfig').pyright.setup{}
+require('lspconfig').pyright.setup {
+	capabilities = capabilities
+}
 -- Rust
-require('lspconfig').rust_analyzer.setup{}
+require('lspconfig').rust_analyzer.setup {
+	capabilities = capabilities
+}
 -- Lua
-require('lspconfig').lua_ls.setup{
+require('lspconfig').lua_ls.setup {
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		client.server_capabilities.documentFormattingProvider = true
+	end,
 	settings = {
 		Lua = {
-			runtime = {
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				globals = { "vim" },
-			},
+			runtime = { version = "LuaJIT", },
+			diagnostics = { globals = { "vim" }, },
 			workspace = {
 				library = vim.api.nvim_get_runtime_file("", true),
 				checkThirdParty = false,
 			},
-			telemetry = {
-				enable = false,
-			},
+			telemetry = { enable = false, },
 		},
 	}
 }
 -- TypeScript/JS
-require('lspconfig').ts_ls.setup{}
+require('lspconfig').ts_ls.setup {
+	capabilities = capabilities
+}
 -- HTML
-require('lspconfig').html.setup{}
+require('lspconfig').html.setup {
+	capabilities = capabilities
+}
 -- CSS
-require('lspconfig').cssls.setup{
+require('lspconfig').cssls.setup {
 	capabilities = capabilities
 }
 -- Vue
-require('lspconfig').volar.setup{}
+require('lspconfig').volar.setup {
+	capabilities = capabilities
+}
 -- Docker
-require('lspconfig').dockerls.setup{}
+require('lspconfig').dockerls.setup {
+	capabilities = capabilities
+}
 -- Go
-require('lspconfig').gopls.setup{}
+require('lspconfig').gopls.setup {
+	capabilities = capabilities,
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true
+			},
+			staticcheck = true,
+			gofumpt = true,
+		}
+	}
+}
 -- C
-require('lspconfig').clangd.setup{}
+require('lspconfig').clangd.setup {
+	capabilities = capabilities
+}
 -- Astro
-require('lspconfig').astro.setup{
+require('lspconfig').astro.setup {
 	capabilities = capabilities
 }
 -- Tailwind
-require('lspconfig').tailwindcss.setup{}
+require('lspconfig').tailwindcss.setup {
+	capabilities = capabilities
+}
 -- Swift
-require('lspconfig').sourcekit.setup{}
+require('lspconfig').sourcekit.setup {
+	capabilities = capabilities
+}
+
+-- Automatic formatting
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = { "*.go", "*.lua" },
+	callback = function()
+		vim.lsp.buf.format({ async = true })
+	end
+})
