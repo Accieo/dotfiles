@@ -1,4 +1,3 @@
-require 'config.lspsaga'
 require 'config.lualine'
 require 'config.nvim_tree'
 require 'config.gitsigns'

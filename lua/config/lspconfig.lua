@@ -82,3 +82,30 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format({ async = true })
 	end
 })
+
+-- Diagnostic setup
+vim.diagnostic.config({
+	virtual_text = {
+		spacing = 4,
+		prefix = '●',
+		source = "if_many",
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN]  = "",
+			[vim.diagnostic.severity.INFO]  = "",
+			[vim.diagnostic.severity.HINT]  = "",
+		},
+	},
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		header = "",
+		prefix = "",
+	},
+})

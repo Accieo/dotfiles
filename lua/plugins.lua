@@ -46,14 +46,6 @@ return {
 		end,
 	},
 
-	-- LSP Saga
-	{
-		"glepnir/lspsaga.nvim",
-		config = function()
-			require("config.lspsaga")
-		end,
-	},
-
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",

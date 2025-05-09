@@ -30,7 +30,7 @@ local accieoMaps = {
 
 	telescope_live_grep = map(
 		'n',
-		'gr',
+		'<leader>gr',
 		function() require('telescope.builtin').live_grep() end,
 		make_opt 'Grep over files in current workspace.'
 	),
@@ -56,55 +56,6 @@ local accieoMaps = {
 		make_opt 'Execute current python script.'
 	),
 
-	saga_hover_doc = remap(
-		'n',
-		'K',
-		'<cmd>Lspsaga hover_doc<CR>',
-		make_opt 'Display doc in pop-up window'
-	),
-
-	saga_code_action = remap(
-		'n',
-		'<leader>ca',
-		'<cmd>Lspsaga code_action<CR>',
-		make_opt 'Show code actions'
-	),
-
-	saga_jump_next_error = remap(
-		'n',
-		'<F2>',
-		function() require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR }) end,
-		make_opt 'Jump to next error'
-	),
-
-	saga_jump_prev_error = remap(
-		'n',
-		'<leader><F2>',
-		function() require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR }) end,
-		make_opt 'Jump to prev error'
-	),
-
-	saga_jump_next_diagnostic = remap(
-		'n',
-		'<F3>',
-		'<cmd>Lspsaga diagnostic_jump_next<CR>',
-		make_opt 'Jump to next diagnostic'
-	),
-
-	saga_jump_prev_diagnostic = remap(
-		'n',
-		'<leader><F3>',
-		'<cmd>Lspsaga diagnostic_jump_prev<CR>',
-		make_opt 'Jump to prev diagnostic'
-	),
-
-	saga_rename = remap(
-		'n',
-		'<F4>',
-		'<cmd>Lspsaga rename<CR>',
-		make_opt 'Rename/Refactor'
-	),
-
 	see_diff = remap(
 		'n',
 		'<leader>gd',
@@ -113,5 +64,54 @@ local accieoMaps = {
 	)
 
 }
+
+-- Autocommand group for LSP stuff
+local lsp_augroup = vim.api.nvim_create_augroup('AccieoLspConfig', { clear = true })
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	group = lsp_augroup,
+	desc = 'LSP actions, diagnostics and formatting',
+	callback = function(ev)
+		-- Buffer local opts
+		vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+		local buf_map = function(mode, lhs, rhs, desc)
+			local opts = make_opt(desc)
+			opts.buffer = ev.buf
+			vim.keymap.set(mode, lhs, rhs, opts)
+		end
+
+		-- Hover docs
+		buf_map('n', 'K', vim.lsp.buf.hover, 'Hover documentation')
+
+		-- Code actions
+		buf_map('n', '<leader>ca', vim.lsp.buf.code_action, 'Code actions')
+		buf_map('v', '<leader>ca', vim.lsp.buf.code_action, 'Code actions (v-mode)')
+
+		-- Go to
+		buf_map('n', 'gd', vim.lsp.buf.definition, 'Go to definition')
+		buf_map('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration')
+		buf_map('n', 'gt', vim.lsp.buf.type_definition, 'Go to type definition')
+		buf_map('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
+
+		-- References
+		buf_map('n', 'gr', vim.lsp.buf.references, 'Go to references')
+
+		-- Rename
+		buf_map('n', '<F4>', vim.lsp.buf.rename, 'Rename symbol')
+
+		-- Diagnostics
+		buf_map('n', ']d', vim.diagnostic.get_next, 'Next diagnostic')
+		buf_map('n', '[d', vim.diagnostic.get_prev, 'Previous diagnostic')
+		buf_map('n', '<leader>d', vim.diagnostic.open_float, 'Show in-line diagnostic')
+
+		buf_map('n', ']e',
+			function() vim.diagnostic.jump({ count = 1, float = true, severity = vim.diagnostic.severity.ERROR }) end,
+			'Next error')
+		buf_map('n', '[e',
+			function() vim.diagnostic.jump({ count = -1, float = true, severity = vim.diagnostic.severity.ERROR }) end,
+			'Previous error')
+	end
+})
 
 return accieoMaps
