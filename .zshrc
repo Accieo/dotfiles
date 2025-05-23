@@ -25,6 +25,10 @@ export GOPATH="$HOME/.go"
 export PATH="/opt/homebrew/opt/rustup/bin/:$PATH"
 # Set eza config dir
 export EZA_CONFIG_DIR="$HOME/.config/eza"
+# Set models path
+export LOCAL_AI_MODELS="$HOME/Development/Models"
+# Docker baking
+export COMPOSE_BAKE=true
 
 # -- Plugins
 plugins=(git zsh-autosuggestions)
@@ -51,6 +55,7 @@ alias venvact='source $HOME/Development/.venvs/main/bin/activate'
 alias ls='eza -lh --sort=filename --sort=type --icons'
 alias jl='venvact && jupyter-lab'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
+alias nfgpicker='$HOME/Development/Projects/nfg-picker/nfg-picker'
 
 # -- Zsh
 eval "$(zoxide init zsh)"
