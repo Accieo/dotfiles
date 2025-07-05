@@ -56,6 +56,7 @@ alias ls='eza -lh --sort=filename --sort=type --icons'
 alias jl='venvact && jupyter-lab'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
 alias nfgpicker='$HOME/Development/Projects/nfg-picker/nfg-picker'
+alias vid2ten='$HOME/Development/Raycast/scripts/compress-video.sh'
 
 # -- Zsh
 eval "$(zoxide init zsh)"
