@@ -49,11 +49,23 @@ local accieoMaps = {
 		make_opt 'Save current file'
 	),
 
-	python = map(
+	run = map(
 		'n',
 		'<C-p>',
-		':w<CR>:!python3.12 %<CR>',
-		make_opt 'Execute current python script.'
+		function()
+			local ext = vim.fn.expand('%:e')
+
+			vim.cmd(':w')
+
+			if ext == 'py' then
+				vim.cmd('botright terminal python3.12 %')
+			elseif ext == 'rs' then
+				vim.cmd('botright terminal rustc % && ./' .. vim.fn.expand('%:t:r'))
+			else
+				print('No run command defined for this file type.')
+			end
+		end,
+		make_opt('Execute current file.')
 	),
 
 	see_diff = remap(
