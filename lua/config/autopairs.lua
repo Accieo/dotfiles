@@ -2,14 +2,14 @@ local autopairs = require 'nvim-autopairs'
 local Rule = require 'nvim-autopairs.rule'
 
 autopairs.setup {
-    check_ts = true,
-    fast_wrap = {
-        map = '<A-w>',
-    },
+	check_ts = true,
+	fast_wrap = {
+		map = '<A-w>',
+	},
 }
 
 autopairs.add_rules {
-    Rule('<', '>'),
+	Rule('<', '>'),
 }
 
 local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
