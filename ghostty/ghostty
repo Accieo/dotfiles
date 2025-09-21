@@ -1,13 +1,13 @@
 # Font settings
 font-size = 16
 font-thicken = true
-font-family = JetBrains Mono NL
+font-family = SF Mono
 #font-style-bold = Medium
 #font-style-italic = Light Italic
 #font-style-bold-italic = Regular Italic
 font-synthetic-style = no-bold,no-bold-italic
 # Window font settings
-window-title-font-family = JetBrains Mono NL
+window-title-font-family = SF Mono
 
 # Theme
 theme = Oxocarbon
