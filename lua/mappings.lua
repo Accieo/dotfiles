@@ -73,8 +73,21 @@ local accieoMaps = {
 		'<leader>gd',
 		function() require('gitsigns.actions').preview_hunk() end,
 		make_opt('Preview diffs')
-	)
+	),
 
+	format_go = remap(
+		'n',
+		'=G',
+		function()
+			local clients = vim.lsp.get_clients({ bufnr = 0 })
+			if #clients == 0 then
+				print("No LSP client attached for formatting")
+				return
+			end
+			vim.lsp.buf.format({ async = false })
+		end,
+		make_opt('Format file')
+	)
 }
 
 -- Autocommand group for LSP stuff
