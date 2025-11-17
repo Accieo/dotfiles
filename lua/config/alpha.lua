@@ -25,6 +25,7 @@ dashboard.section.buttons.val = {
 	dashboard.button('m', '  Edit Keymaps', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/mappings.lua<CR>'),
 	dashboard.button('p', '󰤌  Edit Plugins', '<cmd>e ' .. os.getenv 'HOME' .. '/.config/nvim/lua/plugins.lua<CR>'),
 	dashboard.button('l', '  Open Lazy', '<cmd>Lazy<CR>'),
+	dashboard.button('-', '  Check health', '<cmd>checkhealth<CR>'),
 	dashboard.button('q', '󰖭  Quit', '<cmd>wqa<CR>'),
 }
 
