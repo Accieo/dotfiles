@@ -58,7 +58,7 @@ local accieoMaps = {
 			vim.cmd(':w')
 
 			if ext == 'py' then
-				vim.cmd('botright terminal python3.12 %')
+				vim.cmd('botright terminal python3.14 %')
 			elseif ext == 'rs' then
 				vim.cmd('botright terminal rustc % && ./' .. vim.fn.expand('%:t:r'))
 			else
@@ -75,7 +75,7 @@ local accieoMaps = {
 		make_opt('Preview diffs')
 	),
 
-	format_go = remap(
+	format = remap(
 		'n',
 		'=G',
 		function()
