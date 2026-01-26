@@ -1,5 +1,3 @@
-require("mason-lspconfig").setup()
-
 -- Change icons
 require("mason").setup({
     ui = {
@@ -10,3 +8,5 @@ require("mason").setup({
         }
     }
 })
+
+require("mason-lspconfig").setup()

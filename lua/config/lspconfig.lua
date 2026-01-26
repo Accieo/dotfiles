@@ -1,14 +1,14 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Python
-require('lspconfig').pyright.setup {
+vim.lsp.config('pyright', {
 	capabilities = capabilities
-}
+})
 -- Rust
-require('lspconfig').rust_analyzer.setup {
+vim.lsp.config('rust_analyzer', {
 	capabilities = capabilities
-}
+})
 -- Lua
-require('lspconfig').lua_ls.setup {
+vim.lsp.config('lua_ls', {
 	capabilities = capabilities,
 	on_attach = function(client, _)
 		client.server_capabilities.documentFormattingProvider = true
@@ -24,29 +24,29 @@ require('lspconfig').lua_ls.setup {
 			telemetry = { enable = false, },
 		},
 	}
-}
+})
 -- TypeScript/JS
-require('lspconfig').ts_ls.setup {
+vim.lsp.config('ts_ls', {
 	capabilities = capabilities
-}
+})
 -- HTML
-require('lspconfig').html.setup {
+vim.lsp.config('html', {
 	capabilities = capabilities
-}
+})
 -- CSS
-require('lspconfig').cssls.setup {
+vim.lsp.config('cssls', {
 	capabilities = capabilities
-}
+})
 -- Vue
-require('lspconfig').volar.setup {
+vim.lsp.config('volar', {
 	capabilities = capabilities
-}
+})
 -- Docker
-require('lspconfig').dockerls.setup {
+vim.lsp.config('dockerls', {
 	capabilities = capabilities
-}
+})
 -- Go
-require('lspconfig').gopls.setup {
+vim.lsp.config('gopls', {
 	capabilities = capabilities,
 	settings = {
 		gopls = {
@@ -57,23 +57,23 @@ require('lspconfig').gopls.setup {
 			gofumpt = true,
 		}
 	}
-}
+})
 -- C
-require('lspconfig').clangd.setup {
+vim.lsp.config('clangd', {
 	capabilities = capabilities
-}
+})
 -- Astro
-require('lspconfig').astro.setup {
+vim.lsp.config('astro', {
 	capabilities = capabilities
-}
+})
 -- Tailwind
-require('lspconfig').tailwindcss.setup {
+vim.lsp.config('tailwindcss', {
 	capabilities = capabilities
-}
+})
 -- Swift
-require('lspconfig').sourcekit.setup {
+vim.lsp.config('sourcekit', {
 	capabilities = capabilities
-}
+})
 
 -- Automatic formatting
 vim.api.nvim_create_autocmd("BufWritePre", {
