@@ -1,3 +1,5 @@
+# -- Config
+export XDG_CONFIG_HOME="$HOME/.config"
 # -- Exports
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -10,9 +12,9 @@ export PATH="$HOME/Development/.scripts/:$PATH"
 # Set ZSH comp dump path
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 # Set Jupyter config path
-export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
 # Set iPython config path
-export IPYTHONDIR="$HOME/.config/ipython"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 # Set Gradle path
 export GRADLE_USER_HOME="$HOME/.cache/gradle"
 # Add postgresql to path
@@ -24,41 +26,35 @@ export GOPATH="$HOME/.go"
 # Add Rust to path
 export PATH="/opt/homebrew/opt/rustup/bin/:$PATH"
 # Set eza config dir
-export EZA_CONFIG_DIR="$HOME/.config/eza"
+export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 # Set models path
-export LOCAL_AI_MODELS="$HOME/Development/Models"
+export AI_MODELS="$HOME/Development/Models"
 # Docker baking
 export COMPOSE_BAKE=true
+# Add bun to path
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # -- Plugins
 plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# -- Functions
-venvacth() {
-	venvdir=$(find . -maxdepth 3 -path "*/bin/activate" -type f 2>/dev/null)
-	if [[ -z "$venvdir" ]]; then
-		echo "venv not found in current folder"
-	else
-		source "$venvdir"
-	fi
-}
-
 # -- Aliases
 alias vim='nvim'
 alias fvim='nvim $(fzf)'
 alias cfg='vim $HOME/.zshrc'
-alias python='python3.12'
+alias python='python3.14'
 alias pip='pip3'
-alias venvact='source $HOME/Development/.venvs/main/bin/activate'
 alias ls='eza -lh --sort=filename --sort=type --icons'
-alias jl='venvact && jupyter-lab'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
 alias nfgpicker='$HOME/Development/Projects/nfg-picker/nfg-picker'
-alias vid2ten='$HOME/Development/Raycast/scripts/compress-video.sh'
+alias vid2ten='$HOME/Development/Scripts/compress-video.sh'
 
 # -- Zsh
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/mewtwo.json)"
+eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/ohmyposh/mewtwo.json)"
+
+# Bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"

@@ -27,7 +27,12 @@ vim.lsp.config('lua_ls', {
 })
 -- TypeScript/JS
 vim.lsp.config('ts_ls', {
-	capabilities = capabilities
+	capabilities = capabilities,
+	filetypes = {
+		"javascript",
+		"typescript",
+		"vue",
+	},
 })
 -- HTML
 vim.lsp.config('html', {
@@ -38,7 +43,7 @@ vim.lsp.config('cssls', {
 	capabilities = capabilities
 })
 -- Vue
-vim.lsp.config('volar', {
+vim.lsp.config('vue_ls', {
 	capabilities = capabilities
 })
 -- Docker
