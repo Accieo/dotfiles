@@ -2,23 +2,6 @@ return {
 	-- Package manager
 	"folke/lazy.nvim",
 
-	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = function()
-			require("config.treesitter")
-		end,
-	},
-
-	-- Better integrated terminal support
-	{
-		"akinsho/toggleterm.nvim",
-		config = function()
-			require("config.toggleterm")
-		end,
-	},
-
 	-- Close brackets automatically
 	{
 		"windwp/nvim-autopairs",
