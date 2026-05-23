@@ -31,9 +31,6 @@ export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 export AI_MODELS="$HOME/Development/Models"
 # Docker baking
 export COMPOSE_BAKE=true
-# Add bun to path
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # -- Plugins
 plugins=(git zsh-autosuggestions)
@@ -55,6 +52,3 @@ alias vid2ten='$HOME/Development/Scripts/compress-video.sh'
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/ohmyposh/mewtwo.json)"
-
-# Bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
