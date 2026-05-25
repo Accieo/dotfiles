@@ -51,4 +51,4 @@ alias vid2ten='$HOME/Development/Scripts/compress-video.sh'
 # -- Zsh
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
-eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/ohmyposh/mewtwo.json)"
+eval "$(oh-my-posh init zsh --config $XDG_CONFIG_HOME/ohmyposh/theme.json)"
