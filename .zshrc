@@ -28,7 +28,7 @@ export PATH="/opt/homebrew/opt/rustup/bin/:$PATH"
 # Set eza config dir
 export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 # Set models path
-export AI_MODELS="$HOME/Development/Models"
+export AI_MODELS="$HOME/development/models"
 # Docker baking
 export COMPOSE_BAKE=true
 
@@ -43,10 +43,10 @@ alias fvim='nvim $(fzf)'
 alias cfg='vim $HOME/.zshrc'
 alias python='python3.14'
 alias pip='pip3'
-alias ls='eza -lh --sort=filename --sort=type --icons'
+alias ls='eza -lh --sort=filename --sort=type'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
-alias nfgpicker='$HOME/Development/Projects/nfg-picker/nfg-picker'
-alias vid2ten='$HOME/Development/Scripts/compress-video.sh'
+alias nfgpicker='$HOME/development/projects/nfg-picker/nfg-picker'
+alias vid2ten='$HOME/development/scripts/compress-video.sh'
 
 # -- Zsh
 eval "$(zoxide init zsh)"
