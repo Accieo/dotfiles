@@ -1,7 +1,7 @@
 # Font settings
-font-size = 16
-font-thicken = true
-font-family = SF Mono
+font-size = 18
+font-thicken = false
+font-family = Google Sans Code
 #font-style-bold = Medium
 #font-style-italic = Light Italic
 #font-style-bold-italic = Regular Italic
@@ -10,7 +10,7 @@ font-synthetic-style = no-bold,no-bold-italic
 window-title-font-family = SF Mono
 
 # Theme
-theme = Oxocarbon
+theme = Ayu
 
 # Clipboard settings
 clipboard-read = allow
@@ -23,4 +23,5 @@ macos-titlebar-style = tabs
 # Misc.
 mouse-hide-while-typing = false
 window-save-state = always
+window-step-resize = true
 macos-icon = official
