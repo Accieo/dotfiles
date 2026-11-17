@@ -8,7 +8,7 @@ export PATH="/opt/homebrew/opt/python@3.12/bin:$PATH"
 # Editor export
 export EDITOR='nvim'
 # Scripts path
-export PATH="$HOME/Development/.scripts/:$PATH"
+export PATH="$HOME/Development/scripts/:$PATH"
 # Set ZSH comp dump path
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 # Set Jupyter config path
@@ -31,6 +31,10 @@ export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 export AI_MODELS="$HOME/development/models"
 # Docker baking
 export COMPOSE_BAKE=true
+# eMudhra 2026.10.21 exploit (4 lmao)
+export PIP_CERT=/etc/ssl/cert.pem
+# Java home
+export JAVA_HOME="$(/usr/libexec/java_home -v 25)"
 
 # -- Plugins
 plugins=(git zsh-autosuggestions)
@@ -46,7 +50,12 @@ alias pip='pip3'
 alias ls='eza -lh --sort=filename --sort=type'
 alias startdb='LC_ALL="C" /opt/homebrew/opt/postgresql@15/bin/postgres -D /opt/homebrew/var/postgresql@15'
 alias nfgpicker='$HOME/development/projects/nfg-picker/nfg-picker'
-alias vid2ten='$HOME/development/scripts/compress-video.sh'
+
+# -- Helpers
+jdk() {
+  export JAVA_HOME="$(/usr/libexec/java_home -v "$1")" || return
+  java -version 2>&1 | head -1
+}
 
 # -- Zsh
 eval "$(zoxide init zsh)"
